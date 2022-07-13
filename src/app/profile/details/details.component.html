@@ -1,0 +1,37 @@
+
+<mat-card-title >
+    Personal Details
+</mat-card-title>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-3">
+            <form>
+                <mat-form-field appearance="fill">
+                  <mat-label>First Name</mat-label>
+                  <input matInput placeholder="Ex. John" value="Jigeesha">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="col-3">
+            <form class="example-form col-3">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Last Name</mat-label>
+                  <input matInput placeholder="Ex. Bing" value="Kandula">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="col-6">
+           <app-dob></app-dob>             
+        </div>
+    
+    </div>
+</div>
+
+<mat-card-subtitle>Social Profile</mat-card-subtitle>
+<mat-chip-list aria-label="Fish selection">
+    <mat-chip><a href="https://www.linkedin.com/in/jigeeshakandula/" target="_blank">Linkedin</a></mat-chip>
+    <mat-chip><a href="https://github.com/Jigeeshakandula"> Git </a></mat-chip>
+    <mat-chip color="primary" selected>jigeesha.kandula97@gmail.com</mat-chip>
+    <mat-chip color="accent" selected>Mobile: 8455934238</mat-chip>
+</mat-chip-list>
+  
