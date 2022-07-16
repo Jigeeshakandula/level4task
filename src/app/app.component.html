@@ -1,15 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 p-5">
-      <button class="mr-3" mat-raised-button routerLink="/login">
-        Go to Login 
-      </button>
-      
-    </div>
+<div  class= "container p-3 bg-container">
+  <mat-toolbar color="primary" class="p-4">
+    <span >My Application</span>
+   <span></span>
+  </mat-toolbar>
+  <div class="d-flex flex-row">
+
+    <mat-toolbar-row >
+      <a  routerLink="/login"> LoginPage</a>
+    </mat-toolbar-row>
   </div>
+ 
+ 
   <div class="row">
-    <div class="col-12 pl-5">
-      <router-outlet></router-outlet>
+    <div class="col-12 p-5 m-5">
+      <router-outlet >
+
+      </router-outlet>
     </div>
   </div>
 </div>

@@ -9,24 +9,16 @@ import { ProfileComponent } from './profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
-import { DetailsComponent } from './profile/details/details.component';
-import { EducationComponent } from './profile/education/education.component';
-import { ExperienceComponent } from './profile/experience/experience.component';
-import { DobComponent } from './profile/details/dob/dob.component';
-import { DateComponent } from './profile/education/date/date.component';
-
+import { UserdataService } from './userdata.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ProfileComponent,
-    DetailsComponent,
-    EducationComponent,
-    ExperienceComponent,
-    DobComponent,
-    DateComponent
+    ProfileComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +27,7 @@ import { DateComponent } from './profile/education/date/date.component';
     FormsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [UserdataService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

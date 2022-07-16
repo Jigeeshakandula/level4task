@@ -18,3 +18,9 @@
   input.example-right-align {
     -moz-appearance: textfield;
   }
+  .action-style{
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    font-size: small;
+  }
