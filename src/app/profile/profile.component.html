@@ -1,18 +1,192 @@
+
 <div class="container">
     <div class="row mb-5">
         <div class="col-12">
-            <app-details></app-details>
+            
+            <div class="d-flex flex-row justify-content-between">
+                <div>
+                    <mat-card-title >
+                        Personal Details
+                    </mat-card-title>
+                </div>
+                
+                <div>
+                    <button class="mr-3" mat-raised-button routerLink="/login">
+                        Logout
+                    </button>
+                </div>
+            </div>
+    
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-3">
+                        <form>
+                            <mat-form-field appearance="fill">
+                            <mat-label >First Name</mat-label>
+                            <input [(ngModel)] = "fname" name="J" matInput placeholder="Ex. John" value="Jigeesha">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-3">
+                        <form >
+                            <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label >Last Name</mat-label>
+                            <input [(ngModel)] = "lname" name="K" matInput placeholder="Ex. Bing" value="Kandula">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-3">
+                        <form >
+                            <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label >Age</mat-label>
+                            <input [(ngModel)] = "age" name="0" matInput placeholder="Enter Age" value="0">
+                            </mat-form-field>
+                        </form>      
+                            
+                    </div>
+                
+                </div>
+            </div>
+
+            <mat-card-subtitle>Social Profile</mat-card-subtitle>
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip><a href="https://www.linkedin.com/in/jigeeshakandula/" target="_blank">Linkedin</a></mat-chip>
+                <mat-chip><a href="https://github.com/Jigeeshakandula"> Git </a></mat-chip>
+                <mat-chip color="primary" selected>jigeesha.kandula97@gmail.com</mat-chip>
+                <mat-chip color="accent" selected>Mobile: 8455934238</mat-chip>
+            </mat-chip-list>
+  
         </div>
     </div>
     <div class="row mb-5">
         <div class="col-12 ">
-            <app-education></app-education>
+            <mat-card-title>Education Details</mat-card-title>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-3">
+                        <form>
+                            <mat-form-field appearance="fill">
+                            <mat-label>University/College</mat-label>
+                            <input [(ngModel)] = "university" name="university" matInput placeholder="Enter Universit/College Name" value="KLUniversity">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-3">
+                        <form class="example-form col-3">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Degree</mat-label>
+                            <input matInput name="degree" [(ngModel)] = "degree" placeholder="Enter Degree" value="B.Tech">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-6">
+            
+                        <mat-form-field appearance="fill">
+                            <mat-label>Start Date - End Date</mat-label>
+                            <mat-date-range-input [formGroup]="rangel" [rangePicker]="picker1">
+                            <input name="startdate" [(ngModel)] = "edStartDate" matStartDate formControlName="start" placeholder="Start date">
+                            <input name="enddate" [(ngModel)] = "edEndDate" matEndDate formControlName="end" placeholder="End date">
+                            </mat-date-range-input>
+                            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker1></mat-date-range-picker>
+                        
+                            <mat-error *ngIf="rangel.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                            <mat-error *ngIf="rangel.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+                        </mat-form-field>         
+                    </div>
+        
+                </div>
+            <div class="row">
+                <div class="col-3">
+                    <form>
+                        <mat-form-field appearance="fill">
+                        <mat-label>Branch/Specialization</mat-label>
+                        <input name="specialization" [(ngModel)]="specialization" matInput placeholder="Enter Specialization Name" value="Computer Science">
+                        </mat-form-field>
+                    </form>
+                </div>
+                <div class="col-3">
+                    <form class="example-form col-3">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>CGPA/%</mat-label>
+                        <input matInput name="cgpa" [(ngModel)]="cgpa" placeholder="Enter CGPA" value="8.02">
+                        </mat-form-field>
+                    </form>
+                </div>
+            
+                </div>
+            </div>
         </div>
     </div>
     <div class="row mb-5">
         <div class="col-12 ">    
-            <app-experience></app-experience>
+            <mat-card-title>Work Experience</mat-card-title>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-3">
+                        <form>
+                            <mat-form-field  appearance="fill">
+                            <mat-label>Company/Organization</mat-label>
+                            <input name="Organization" [(ngModel)]="organization" matInput placeholder="Enter your Organization" value="Mindtree">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-3">
+                    
+                    <mat-form-field appearance="fill">
+                            <mat-label>Exp in Years</mat-label>
+                            <mat-select name="experience" [(ngModel)]="experience">
+                                <mat-option *ngFor="let year of years" [value]="year.value">
+                                {{year.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Start Date - End Date</mat-label>
+                            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                            <input matStartDate formControlName="start" placeholder="Start date">
+                            <input matEndDate formControlName="end" placeholder="End date">
+                            </mat-date-range-input>
+                            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+                        
+                            <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                            <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+                        </mat-form-field>           
+                    </div>
+                
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <form >
+                            <mat-form-field  appearance="fill">
+                            <mat-label>Designation/Role</mat-label>
+                            <input [(ngModel)]="designation" name="designation" matInput placeholder="Enter designation" value="Engineer">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field class="text-area" appearance="fill">
+                            <mat-label>Responsibilities</mat-label>
+                            <textarea matInput placeholder="Enter your work responsibilities"></textarea>
+                        </mat-form-field>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="row">
+        <button class="mr-3" mat-raised-button (click) = "saveDetails()">
+            Save Details
+          </button>
     </div>
 </div>
 

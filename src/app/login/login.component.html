@@ -1,22 +1,35 @@
 <div class="example-container">
     <mat-form-field appearance="fill">
       <mat-label>Enter your email</mat-label>
-      <input matInput [formControl]="email" placeholder="pat@example.com"  required>
+      <input [(ngModel)]="mail" matInput [formControl]="email" placeholder="pat@example.com"  required>
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
+    <button mat-raised-button class="action-style"
+        matTooltip="jigeesha@gmail.com"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+        Email Suggestion
+    </button>
 </div>
+
 
 <div class="example-container">
     <mat-form-field appearance="fill">
         <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
+        <input [(ngModel)] = "pwd" matInput [type]="hide ? 'password' : 'text'">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
     </mat-form-field>
+    <button mat-raised-button class="action-style"
+        matTooltip="qwerty"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+        Password Suggestion
+    </button>
 </div>
 <div>
 
-    <button mat-flat-button color="accent" class=" btn btn-primary"routerLink="/home">Login</button>
+    <button mat-flat-button color="accent" class=" btn btn-primary" (click)="login()">
+        Login
+    </button>
 </div>
  

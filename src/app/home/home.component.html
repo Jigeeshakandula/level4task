@@ -1,7 +1,40 @@
-<h2>Jigeesha Kandula</h2>
-<button class="button-style" routerLink="/profile">
-    <img   class="image" src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png" alt="My-Image">
-</button>
+
+<div class="d-flex flex-row justify-content-between">
+
+    <div class="d-flex flex-column">
+        <h2  ngDefaultControl>{{fname}} </h2>
+        <button class="button-style">
+            <img   class="image" src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png" alt="My-Image">
+        </button>
+        <button class="m-3" mat-raised-button routerLink="/profile">
+            Edit Profile
+        </button>
+    </div>
+    <div class="d-flex flex-column">
+
+        <p>Age : {{age}}</p>
+        <h2>Education Details</h2>
+        <p>University/College: {{university}} </p>
+        <p>Degree: {{degree}} </p>
+        <P>Specialization: {{specialization}} </P>
+        <p>CGPA: {{cgpa}} </p>
+        <p>Degree Start Date: {{EdStartDate}} </p>
+        <p>Degree End Date:{{EdEndDate}} </p>
+        
+        <h2>Employement Details</h2>
+        <p>Organization: {{organization}} </p>
+        <p>Designation: {{designation}} </p>
+        <p>Experience: {{experience}} </p>
+
+    </div>
+    <div>
+        <button class="mr-3" mat-raised-button routerLink="/login">
+            Logout
+          </button>
+    </div>
+    
+</div>
+
 
 
 
