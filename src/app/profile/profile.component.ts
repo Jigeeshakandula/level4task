@@ -13,7 +13,7 @@ interface year {
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  styleUrls: ['./profile.component.css']
   
 })
 export class ProfileComponent implements OnInit {
@@ -29,11 +29,36 @@ export class ProfileComponent implements OnInit {
   organization="";
   designation="";
   experience="";
+  epStartDate = new Date("06/30/2018");
+  epEndDate = new Date("09/04/2020");
+  responsibility="Technical Support Engineer";
+  personDetails = {};
+  educationDetails = {};
+  employmentDetails = {};
   constructor(private route: Router,
     private userData: UserdataService) { }
 
   ngOnInit(): void {
+    this.personDetails = this.userData.getDetails();
+    this.fname = this.personDetails['fname'];
+    this.lname = this.personDetails['lname'];
+    this.age = this.personDetails['age'];
 
+    this.educationDetails = this.userData.getEducationDetails();
+    this.university = this.educationDetails['University'];
+    this.degree = this.educationDetails['Degree'];
+    this.specialization = this.educationDetails['Specialization'];
+    this.cgpa = this.educationDetails['cgpa'];
+    this.edStartDate = this.educationDetails['edStartDate'];
+    // this.EdStartDate = this.datepipe.transform(this.edStartDate, 'yyyy-MM-dd');
+    this.edEndDate = this.educationDetails['edEndDate'];
+    // this.EdEndDate =this.datepipe.transform(this.edEndDate, 'yyyy-MM-dd');
+    
+    this.employmentDetails = this.userData.getEmploymentDetails();
+    this.organization = this.employmentDetails['Organization'];
+    this.designation = this.employmentDetails['Designation'];
+    this.experience = this.employmentDetails['Experience'];
+    // this.experience = this.years[this.experience].viewVlaue;
   }
 
   

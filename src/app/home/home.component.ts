@@ -13,6 +13,8 @@ import { UserdataService } from '../userdata.service';
 
 export class HomeComponent implements OnInit{
   fname="";
+  lname="";
+  FullName="";
   age="";
   edStartDate: Date;
   edEndDate: Date;
@@ -32,7 +34,9 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.personDetails = this.userData.getDetails();
-    this.fname = this.personDetails['fullName'];
+    this.fname = this.personDetails['fname'];
+    this.lname = this.personDetails['lname'];
+    this.FullName = this.fname +" "+this.lname;
     this.age = this.personDetails['age'];
 
     this.educationDetails = this.userData.getEducationDetails();
