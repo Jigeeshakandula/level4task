@@ -7,17 +7,17 @@ export class UserdataService {
 
   constructor() { }
  
-  profileDetails ={};
-  educationDetails = {};
-  employmentDetails = {};
+  profileDetails ={fname:"Jigeesha", lname:"Kandula", age:"25"};
+  educationDetails = {University:"KLUniversity", Degree: "B.Tech", Specialization: "Computer Science", edStartDate: new Date("6/10/2014"), edEndDate: new Date("4/15/2018"), cgpa: "8.0"};
+  employmentDetails = {Organization: "Mindtree", Experience:"0-1" , Designation: "Engineer"};
   setPersonalDetails(fName: string, lName: string, Age: string){
  
-   this.profileDetails= {fullName : fName+" "+lName, age: Age}
+   this.profileDetails= {fname: fName, lname:lName, age: Age}
    
   }
 
   setEdDetails(university: string, degree: string, specialization: string, edStartDate: Date, edEndDate: Date, cgpa: string){
-    this.educationDetails = {University:university, Degree: degree, Specialization: specialization, edStartDate: edStartDate, edEndDate: edEndDate, cgpa}
+    this.educationDetails = {University:university, Degree: degree, Specialization: specialization, edStartDate: edStartDate, edEndDate: edEndDate, cgpa: cgpa}
   }
 
   setEpDetails(organization: string, experience: string, designation: string){
